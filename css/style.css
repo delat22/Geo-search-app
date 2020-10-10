@@ -1,0 +1,64 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans&family=Roboto&family=Source+Sans+Pro:ital,wght@0,600;0,700;1,400;1,600;1,700&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 16px;
+}
+
+body{
+    background: rgba(138,79,138,1);
+    font-family: 'Source Sans Pro', sans-serif;  
+    width: 100vw;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.wrapper{
+    margin: 5%;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50vh;
+}
+
+form{
+    flex-direction: column;
+}
+
+.input{
+    padding: 1em;
+    border: 1px solid gray;
+    border-radius: 10em;
+    width: 50vw;
+    font-size: 1em;
+    outline: none;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.btn{
+    background-color: #0ead69;
+    width: 10em;
+    padding: 0.8em 1em;
+    border: 1px solid #0ead69;
+    border-radius: 10em;
+    font-size: 1em;
+    outline: none;
+}

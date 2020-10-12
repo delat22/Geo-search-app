@@ -31,7 +31,7 @@ function makeRequest(data) {
       try{
         const requestPromise = makeRequest(cit);
         const response = await requestPromise;
-        cityName.textContent = response.name;  
+        return cityName.textContent = response.name;  
       }
 
       catch (errorResponse) { 

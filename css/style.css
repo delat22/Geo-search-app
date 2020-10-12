@@ -30,6 +30,9 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.row--position{
     margin-top: 50vh;
 }
 
@@ -46,6 +49,10 @@ form{
     outline: none;
 }
 
+#error{
+    display: none;
+}
+
 .center{
     display: flex;
     justify-content: center;
@@ -60,5 +67,6 @@ form{
     border: 1px solid #0ead69;
     border-radius: 10em;
     font-size: 1em;
+    cursor: pointer;
     outline: none;
 }

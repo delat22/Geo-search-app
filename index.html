@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/style.css">
     <title>Geo-search</title>
 </head>
 <body>
     <div class="wrapper">
-        <form action="" id="search-form">
-            <input type="text" placeholder="Where are you going?">
-            <a href="/app.html">
-                <button form="search-form"  type="submit" class="btn"> Search </button>
-            </a>
-        </form>
+        <div class="row row--position">
+            <form action="./app.html" id="search-form">
+                <input type="text" placeholder="Where are you going?" class="input" id="text">
+                <div id="error">Please include a valid city name</div>
+                <div class="center">
+                    <button form="search-form"  type="submit" class="btn"  id="buton"> Search </button>
+                </div>
+            </form>
+        </div>
     </div>
+
+    <script src="app.js"></script>
 </body>
 </html>

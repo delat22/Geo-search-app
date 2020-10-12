@@ -1,0 +1,28 @@
+
+.row--modifier{
+    margin-top: -2%;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.row-2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.row-2--modifier{
+    border: 1px solid #8093f1;
+    background-color: #8093f1;
+    margin: 1em 0;
+    font-size: 1.2em;
+    padding: 1em 2em;
+}
+
+.row-3{
+    text-align: center;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+  }

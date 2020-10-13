@@ -4,6 +4,13 @@ const inputElement = document.getElementById('text');
 const searchButton = document.getElementById('buton');
 const errorMsg = document.getElementById('error');
 const cityName = document.getElementById('citi');
+const weatherIcon = document.getElementById('weather-icon');
+const weatherContent = document.getElementById('weather');
+
+
+const searchContainer = document.getElementById('search');
+const resultContainer = document.getElementById('result');
+
 
 //Fetch API
 
@@ -31,7 +38,10 @@ function makeRequest(data) {
       try{
         const requestPromise = makeRequest(cit);
         const response = await requestPromise;
-        return cityName.textContent = response.name;  
+        cityName.textContent = response.name;  
+        weatherContent.textContent = response.weather[0].description;
+        weatherIcon.src =  "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
+        
       }
 
       catch (errorResponse) { 
@@ -39,10 +49,23 @@ function makeRequest(data) {
         alert('Not Copied')
       }
     }
-    
+
+/*** 
+//Create Node and Append Parent
+function createNode(element) {
+  return document.createElement(element); // Create the type of element you pass in the parameters
+}
+
+function append(parent, el) {
+  return parent.appendChild(el); // Append the second parameter(element) to the first one
+}
+***/   
 
 searchButton.addEventListener('click', ($event) => {
+    $event.preventDefault();
     //errorMessage();
+    searchContainer.style.display = 'none';
+    resultContainer.style.display = 'block';
     let cit = inputElement.value;
     submitFormData(cit);
 
@@ -55,4 +78,15 @@ function errorMessage(){
     }
 }
 
+var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox/streets-v11',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: 'pk.eyJ1IjoiZGVsYXRiYWJhIiwiYSI6ImNrZWs5YWoxejEyZ3cycW5waWMwc2VkcHkifQ.hDx7OrGBMvKyLlHxGIF7eQ'
+  }).addTo(mymap);
+ var marker = L.marker([51.5, -0.09]).addTo(mymap);
 

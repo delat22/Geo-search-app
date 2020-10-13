@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/app.css">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <title>Geo-search</title>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="search">
         <div class="row row--position">
             <form action="" id="search-form">
                 <i class="fa fa-search icon"></i>
@@ -23,6 +28,52 @@
             </form>
         </div>
     </div>
+
+    <div class="wrapper-2" id="result">
+        <div class="row row--modifier">
+            <p id="citi"> </p>
+        </div>
+
+        <div class="row-2 row-2--modifier">
+            <div class="col-1" id="col-1">
+                <img src="" alt="" id="weather-icon">
+                <p id="weather"></p>
+            </div>
+
+            <div class="col-2">
+                <p><span id="temp">30</span>&#730;<span id="deg">C</span></p>
+                <label for="toggle" class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>           
+        </div>
+
+        <div class="row-3 row-2">
+            <div class="col-1">
+                <p>Wind</p>
+                <p>70km</p>
+            </div>
+            <div class="col-2">
+                <p>Humidity</p>
+                <p>70km</p>
+            </div>
+            <div class="col-3">
+                <p>Precification</p>
+                <p>70km</p>
+            </div>
+        </div>
+
+        <div class="row-4">
+            <div class="col-1" id="mapid">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
 
     <script src="app.js"></script>
 </body>

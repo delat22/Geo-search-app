@@ -24,6 +24,7 @@ img{
 
 .wrapper{
     margin: 5%;
+    display: block;
 }
 
 .row{

@@ -23,6 +23,17 @@
     padding: 1em 2em;
 }
 
+
+
+.temp{
+    font-size: 3em;
+}
+
+.parameter{
+    font-size: 1.2em;
+    color: hsl(257, 7%, 63%);
+}
+
 .row-3{
     text-align: center;
 }
@@ -33,3 +44,5 @@
     margin: 0;
     padding: 0;
   }
+
+  

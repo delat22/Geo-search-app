@@ -8,13 +8,14 @@
 }
 
 html{
-    font-size: 16px;
+    font-size: 18px;
 }
 
 body{
     background: #ffffff;
     font-family: 'Source Sans Pro', sans-serif;  
     width: 100vw;
+    color: hsl(256, 10%, 21%);
 }
 
 img{
@@ -64,7 +65,6 @@ form{
     box-shadow: 0 0 1px 2px #ECECEC;
     width: 50vw;
     font-size: 1em;
-    color: #686C71;
     outline: none;
 }
 

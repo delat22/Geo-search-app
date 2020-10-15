@@ -10,6 +10,7 @@ const tempDisplay = document.getElementById('temp');
 const windDisplay = document.getElementById('wind');
 const humidityDisplay = document.getElementById('humidity');
 const pressureDisplay = document.getElementById('pressure');
+const timeZone = document.getElementById('time');
 
 
 const searchContainer = document.getElementById('search');
@@ -25,7 +26,7 @@ searchButton.addEventListener('click', ($event) => {
     resultContainer.style.display = 'block';
     let cit = inputElement.value;
     submitFormData(cit);
-
+    
 })
 
 function errorMessage(){
@@ -62,10 +63,11 @@ async function submitFormData(cit) {
     try{
       const requestPromise = makeRequest(cit);
       const response = await requestPromise;
-      cityName.textContent = response.name;  
+      cityName.textContent = response.name + ", " + response.sys.country; 
+      timeZone.textContent = `(UTC) + ${(response.timezone) / 3600}`;
       weatherContent.textContent = response.weather[0].description;
       weatherIcon.src =  "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
-      tempDisplay.textContent = response.main.temp;
+      tempDisplay.textContent = Math.floor(response.main.temp);
       humidityDisplay.textContent = response.main.humidity;
       pressureDisplay.textContent = response.main.pressure;
       windDisplay.textContent = response.wind.speed;
@@ -90,6 +92,7 @@ function append(parent, el) {
 return parent.appendChild(el); // Append the second parameter(element) to the first one
 }
 ***/   
+
 
 
 function mapDisplay(long, lat){

@@ -90,3 +90,30 @@ form{
     cursor: pointer;
     outline: none;
 }
+
+@media only screen and (max-width: 400px){
+
+    html{
+        font-size: 14px;
+    }
+
+    .icon { 
+        padding: 1em 0 1em 1.5em;
+        color: #686C71;
+    } 
+    
+    .left-icon{
+        padding: 1.2em;
+        margin-left: -3em;
+        color: hsl(176, 58%, 56%);
+    }
+    
+    .input{
+        padding: 1em 1em 1em 3.5em;
+        width: 90vw;
+        font-size: 1em;
+    }
+    
+
+    
+  }    

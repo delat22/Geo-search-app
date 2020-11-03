@@ -35,7 +35,13 @@ img{
 }
 
 .row--position{
-    margin-top: 50vh;
+    margin-top: 25vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.geo-img{
+    width: 30vw;
 }
 
 form{

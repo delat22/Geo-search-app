@@ -35,7 +35,7 @@ img{
 }
 
 .row--position{
-    margin-top: 25vh;
+    margin-top: 40vh;
     display: flex;
     flex-direction: column;
 }
@@ -97,10 +97,19 @@ form{
     outline: none;
 }
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 650px){
 
     html{
         font-size: 14px;
+    }
+    
+.row--position{
+    margin-top: 35vh;
+
+}
+
+    .geo-img{
+        width: 50vw;
     }
 
     .icon { 

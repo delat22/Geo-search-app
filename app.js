@@ -11,30 +11,57 @@ const windDisplay = document.getElementById('wind');
 const humidityDisplay = document.getElementById('humidity');
 const pressureDisplay = document.getElementById('pressure');
 const timeZone = document.getElementById('time');
+const convertScale = document.getElementById('convert');
 
 
 const searchContainer = document.getElementById('search');
 const resultContainer = document.getElementById('result');
 
+//Temperature convertion
 
+let weather = {};
+
+weather.tempDisplay = {
+  unit: "celcius"
+}
+
+
+function convertTemperature(tempr){
+  if (weather.tempDisplay.unit === "celcius") {
+    tempDisplay.innerHTML = (tempr * 9/5) + 32;
+    weather.tempDisplay.unit === "fahrenheit";
+  } else{
+    weather.tempDisplay.unit === "celcius"
+  }
+}
 
 
 searchButton.addEventListener('click', ($event) => {
     $event.preventDefault();
-    //errorMessage();
     searchContainer.style.display = 'none';
     resultContainer.style.display = 'block';
     let cit = inputElement.value;
     submitFormData(cit);
+    errorMessage();
     
 })
 
+convertScale.addEventListener('click', ($event) => {
+  $event.preventDefault();
+  let income = tempDisplay.value;
+  convertTemperature(income);
+})
+
+
 function errorMessage(){
     if(inputElement.value == ''){
+        searchContainer.style.display = 'block';
+        resultContainer.style.display = 'none';
         errorMsg.style.display = 'block';
         inputElement.style.borderColor = 'red';
     }
 }
+
 
 
 //Fetch API
@@ -68,9 +95,9 @@ async function submitFormData(cit) {
       weatherContent.textContent = response.weather[0].description;
       weatherIcon.src =  "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
       tempDisplay.textContent = Math.floor(response.main.temp);
-      humidityDisplay.textContent = response.main.humidity;
-      pressureDisplay.textContent = response.main.pressure;
-      windDisplay.textContent = response.wind.speed;
+      humidityDisplay.textContent = response.main.humidity + ' %';
+      pressureDisplay.textContent = response.main.pressure + ' hPa';
+      windDisplay.textContent = response.wind.speed + ' m/s';
       const longitude = response.coord.lon;
       const latitude = response.coord.lat;
       mapDisplay(latitude, longitude);
@@ -78,20 +105,10 @@ async function submitFormData(cit) {
 
     catch (errorResponse) { 
 
-      alert('Not Copied')
+      alert('Please Enter a Valid City Name');
     }
   }
 
-/*** 
-//Create Node and Append Parent
-function createNode(element) {
-return document.createElement(element); // Create the type of element you pass in the parameters
-}
-
-function append(parent, el) {
-return parent.appendChild(el); // Append the second parameter(element) to the first one
-}
-***/   
 
 
 

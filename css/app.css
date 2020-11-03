@@ -1,13 +1,22 @@
 
+
 .wrapper-2{
     display: none;
-    margin: 5%;
+}
+
+#citi{
+    margin-top: 5%;
+}
+
+#time{
+    color: #ffffff;
 }
 
 .row--modifier{
     margin-top: -2%;
     font-size: 1.5em;
     font-weight: 500;
+    color: #ffffff;
 }
 
 .row-2{
@@ -16,12 +25,20 @@
 }
 
 .row-2--modifier{
-    border: 1px solid #8093f1;
-    background-color: #ffffff;
     margin: 1em 0;
     font-size: 1.2em;
     padding: 1em 2em;
+    color: #ffffff;
 }
+
+.row-2--modifier-bg{
+    background-color: #8093f1;
+    background-image: url(../images/pattern-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
 
 
 
@@ -35,7 +52,13 @@
 }
 
 .row-3{
+    background-color: #ffffff;
+    position: relative;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
     text-align: center;
+    margin: 0 5%;
+    z-index: 1;
 }
 
 

@@ -19,7 +19,7 @@
         <div class="row row--position">
             <form action="" id="search-form">
                 <i class="fa fa-search icon"></i>
-                <input type="text" placeholder="Where are you going?" class="input" id="text">
+                <input type="text" placeholder="Where are you going?" class="input" id="text" required>
                 <i class="fa fa-microphone left-icon"></i>
                 <div id="error">Please include a valid city name</div>
                 <div class="center">
@@ -30,41 +30,44 @@
     </div>
 
     <div class="wrapper-2" id="result">
-        <div class="row row--modifier">
-            <p id="citi"> </p>
-        </div>
 
-        <div>
-            <p id="time" class="row"> </p>
-        </div>
-
-        <div class="row-2 row-2--modifier">
-            <div class="col-1" id="col-1">
-                <img src="" alt="" id="weather-icon">
-                <p id="weather"></p>
+        <div class="row-2--modifier-bg">
+            <div class="row row--modifier">
+                <p id="citi"> </p>
             </div>
 
-            <div class="col-2">
-                <p class="temp"><span id="temp"></span>&#730;<span id="deg">c</span></p>
-                <label for="toggle" class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>           
+            <div>
+                <p id="time" class="row"> </p>
+            </div>
+
+            <div class="row-2 row-2--modifier">
+                <div class="col-1" id="col-1">
+                    <img src="" alt="" id="weather-icon">
+                    <p id="weather"></p>
+                </div>
+                
+                <div class="col-2">
+                    <p class="temp"><span id="temp"></span>&#730;<span id="deg"></span></p>
+                    <!--
+                    <button id="convert"> convert to fah</button>
+                    -->
+                </div> 
+                          
+            </div>
         </div>
 
         <div class="row-3 row-2">
             <div class="col-1">
                 <p class="parameter">Wind</p>
-                <p><span id="wind"></span> <span>m/s</span></p>
+                <p><span id="wind"></span></p>
             </div>
             <div class="col-2">
                 <p class="parameter">Humidity</p>
-                <p><span id="humidity"></span> <span>%</span></p>
+                <p><span id="humidity"></span></p>
             </div>
             <div class="col-3">
                 <p class="parameter">Pressure</p>
-                <p><span id="pressure"></span> <span>hPa</span></p>
+                <p><span id="pressure"></span></p>
             </div>
         </div>
 
